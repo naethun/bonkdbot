@@ -163,5 +163,5 @@ process.on('unhandledRejection', error => {
 
 // Login to Discord
 client.login(process.env.BOT_TOKEN).catch(error => {
-    console.error('L Failed to login:', error);
+    console.error('L Failed to login:', process.env.BOT_TOKEN, error);
 });
