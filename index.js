@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config(); // Not needed for Railway
 const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 const config = require('./config.json');
 
@@ -162,6 +162,7 @@ process.on('unhandledRejection', error => {
 });
 
 // Login to Discord
+console.log('Environment check:', process.env.BOT_TOKEN ? 'BOT_TOKEN found' : 'BOT_TOKEN missing');
 client.login(process.env.BOT_TOKEN).catch(error => {
-    console.error('L Failed to login:', process.env.BOT_TOKEN, error);
+    console.error('L Failed to login:', error);
 });
